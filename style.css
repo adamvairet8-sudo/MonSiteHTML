@@ -1,0 +1,13 @@
+body {
+    background-color: darkblue;
+}
+
+/* classe + id */
+
+#id-custom {
+    color: white;
+}
+
+.h1-custom {
+    color: white;
+}
