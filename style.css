@@ -1,5 +1,5 @@
 body {
-    background-color: darkblue;
+    background-color: black;
 }
 
 /* classe + id */
@@ -10,4 +10,13 @@ body {
 
 .h1-custom {
     color: white;
+}
+
+body {
+    color: white;
+}
+
+header {
+    background-color: turquoise;
+    color : black;
 }
