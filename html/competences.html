@@ -1,105 +1,127 @@
-<!-- Page de présentation des compétences -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Configuration de base -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Compétences - Portfolio</title>
-    <!-- Liens vers les ressources -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../images/logo lol.png"/>
 </head>
 <body>
+    <!-- Barre de navigation -->
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
                 <img src="../images/logo lol.png" alt="Logo" height="35">
                 <span>Portfolio</span>
             </div>
-            <button class="menu-toggle">☰</button>
+            <button class="menu-toggle" aria-label="Menu">☰</button>
             <div class="nav-links">
                 <a href="../index.html">Accueil</a>
-                <a href="competences.html">Compétences</a>
-                <a href="annexes.html">Annexes</a>
-                <button class="action-button">Contact</button>
+                <a href="competences.html" class="active">Compétences</a>
+                <a href="annexes.html">Projets</a>
+                <button class="action-button" id="contact-btn">Contact</button>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Mes Compétences</h1>
-        <p>Expertise technique et savoir-faire professionnel</p>
-        <button class="action-button">Télécharger CV</button>
-    </section>
+    <!-- Modal de contact -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Contactez-moi</h2>
+                <button class="close-modal" id="close-modal">×</button>
+            </div>
+            <ul class="contact-list">
+                <li class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-info">
+                        <h4>Téléphone</h4>
+                        <p>+33 6 12 34 56 78</p>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>contact@monportfolio.com</p>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div class="contact-info">
+                        <h4>Adresse</h4>
+                        <p>Paris, France</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" class="social-link">in</a>
+                <a href="https://github.com" target="_blank" class="social-link">gh</a>
+                <a href="https://twitter.com" target="_blank" class="social-link">𝕏</a>
+            </div>
+        </div>
+    </div>
 
-    <section class="cards-section">
-        <div class="cards-grid">
-            <div class="card">
+    <main>
+        <section class="hero">
+            <h1 class="section-title animate-on-scroll">Mes Compétences</h1>
+            <p class="hero-text animate-on-scroll">Expertise technique et savoir-faire professionnel</p>
+            <button class="action-button animate-on-scroll">Télécharger CV</button>
+        </section>
+
+        <section class="cards-section">
+            <div class="container">
+                <div class="skills-grid">
+            <div class="skill-card animate-on-scroll">
+                <div class="skill-icon">🌐</div>
                 <h3>Développement Front-End</h3>
                 <div class="skill-content">
-                    <div class="skill-item">
-                        <span>HTML5/CSS3</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
+                    <p>Création d'interfaces web modernes et réactives</p>
+                    <div class="tech-stack">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
                     </div>
-                    <div class="skill-item">
-                        <span>JavaScript</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Responsive Design</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%"></div>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="skill-card animate-on-scroll">
+                <div class="skill-icon">🎨</div>
                 <h3>Design UI/UX</h3>
                 <div class="skill-content">
-                    <div class="skill-item">
-                        <span>Adobe XD</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 82%"></div>
-                        </div>
+                    <p>Création d'interfaces utilisateur intuitives et esthétiques</p>
+                    <div class="tech-stack">
+                        <li>Figma</li>
+                        <li>Adobe XD</li>
+                        <li>Prototypage</li>
                     </div>
-                    <div class="skill-item">
-                        <span>Figma</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Prototypage</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="skill-card animate-on-scroll">
+                <div class="skill-icon">⚙️</div>
                 <h3>Back-End</h3>
                 <div class="skill-content">
-                    <div class="skill-item">
-                        <span>Node.js</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
+                    <p>Développement de serveurs et bases de données</p>
+                    <div class="tech-stack">
+                        <li>Node.js</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
                     </div>
-                    <div class="skill-item">
-                        <span>PHP</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
                     </div>
-                    <div class="skill-item">
-                        <span>SQL</span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+    </main>
                         </div>
                     </div>
                 </div>

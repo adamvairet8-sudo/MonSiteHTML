@@ -1,12 +1,9 @@
-<!-- Page des annexes et informations complémentaires -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Configuration de base -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annexes - Portfolio</title>
-    <!-- Liens vers les ressources -->
+    <title>Projets & Réalisations - Portfolio</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../images/logo lol.png"/>
 </head>
@@ -17,65 +14,121 @@
                 <img src="../images/logo lol.png" alt="Logo" height="35">
                 <span>Portfolio</span>
             </div>
-            <button class="menu-toggle">☰</button>
+            <button class="menu-toggle" aria-label="Menu">☰</button>
             <div class="nav-links">
                 <a href="../index.html">Accueil</a>
                 <a href="competences.html">Compétences</a>
-                <a href="annexes.html">Annexes</a>
-                <button class="action-button">Contact</button>
+                <a href="annexes.html" class="active">Projets</a>
+                <button class="action-button" id="contact-btn">Contact</button>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Mes Projets</h1>
-        <p>Découvrez mes réalisations et projets personnels</p>
-        <button class="action-button">Explorer</button>
-    </section>
+    <!-- Modal de contact -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Contactez-moi</h2>
+                <button class="close-modal" id="close-modal">×</button>
+            </div>
+            <ul class="contact-list">
+                <li class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-info">
+                        <h4>Téléphone</h4>
+                        <p>+33 6 12 34 56 78</p>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>contact@monportfolio.com</p>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div class="contact-info">
+                        <h4>Adresse</h4>
+                        <p>Paris, France</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" class="social-link">in</a>
+                <a href="https://github.com" target="_blank" class="social-link">gh</a>
+                <a href="https://twitter.com" target="_blank" class="social-link">𝕏</a>
+            </div>
+        </div>
+    </div>
 
-    <section class="cards-section">
-        <div class="cards-grid">
-            <div class="card">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="section-title animate-on-scroll">Mes Projets</h1>
+            <p class="hero-text animate-on-scroll">Découvrez mes réalisations et projets personnels</p>
+            <button class="action-button animate-on-scroll">Explorer les projets</button>
+        </section>
+
+        <!-- Section Projets -->
+        <section class="projects-section">
+            <div class="container">
+                <div class="cards-grid">
+            <div class="card animate-on-scroll">
                 <h3>Site E-commerce</h3>
                 <div class="card-content">
-                    <img src="../images/projet1.jpg" alt="Site E-commerce" class="project-image">
+                    <div class="project-image-container">
+                        <img src="../images/projet1.jpg" alt="Site E-commerce" class="project-image">
+                        <div class="project-overlay">
+                            <button class="action-button">Voir en direct</button>
+                        </div>
+                    </div>
                     <p>Développement d'un site e-commerce moderne avec panier d'achat et paiement sécurisé.</p>
                     <ul class="tech-stack">
                         <li>React</li>
                         <li>Node.js</li>
                         <li>MongoDB</li>
                     </ul>
-                    <button class="action-button">Voir le projet</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card animate-on-scroll">
                 <h3>Application Mobile</h3>
                 <div class="card-content">
-                    <img src="../images/projet2.jpg" alt="Application Mobile" class="project-image">
+                    <div class="project-image-container">
+                        <img src="../images/projet2.jpg" alt="Application Mobile" class="project-image">
+                        <div class="project-overlay">
+                            <button class="action-button">Voir en direct</button>
+                        </div>
+                    </div>
                     <p>Application mobile de suivi d'activités sportives avec géolocalisation.</p>
                     <ul class="tech-stack">
                         <li>Flutter</li>
                         <li>Firebase</li>
                         <li>Google Maps API</li>
                     </ul>
-                    <button class="action-button">Voir le projet</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card animate-on-scroll">
                 <h3>Dashboard Analytics</h3>
                 <div class="card-content">
-                    <img src="../images/projet3.jpg" alt="Dashboard Analytics" class="project-image">
+                    <div class="project-image-container">
+                        <img src="../images/projet3.jpg" alt="Dashboard Analytics" class="project-image">
+                        <div class="project-overlay">
+                            <button class="action-button">Voir en direct</button>
+                        </div>
+                    </div>
                     <p>Tableau de bord pour visualiser et analyser les données en temps réel.</p>
                     <ul class="tech-stack">
                         <li>Vue.js</li>
                         <li>D3.js</li>
                         <li>Express</li>
                     </ul>
-                    <button class="action-button">Voir le projet</button>
                 </div>
             </div>
-        </div>
-    </section>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="../assets/js/index.js"></script>
 </body>

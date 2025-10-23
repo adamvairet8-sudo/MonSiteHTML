@@ -16,38 +16,101 @@
                 <img src="images/logo lol.png" alt="Logo" height="35">
                 <span>Portfolio</span>
             </div>
-            <button class="menu-toggle">☰</button>
+            <button class="menu-toggle" aria-label="Menu">☰</button>
             <div class="nav-links">
-                <a href="index.html">Accueil</a>
+                <a href="index.html" class="active">Accueil</a>
                 <a href="./html/competences.html">Compétences</a>
-                <a href="./html/annexes.html">Annexes</a>
-                <button class="action-button">Contact</button>
+                <a href="./html/annexes.html">Projets</a>
+                <button class="action-button" id="contact-btn">Contact</button>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Découvrez mes projets et compétences en développement web et bien plus encore.</p>
-        <button class="action-button">En savoir plus</button>
-    </section>
-
-    <section class="cards-section">
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Développement Web</h3>
-                <p>Création de sites web modernes et responsives avec les dernières technologies.</p>
+    <!-- Modal de contact -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Contactez-moi</h2>
+                <button class="close-modal" id="close-modal">×</button>
             </div>
-            <div class="card">
-                <h3>Design UI/UX</h3>
-                <p>Conception d'interfaces utilisateur intuitives et esthétiques.</p>
-            </div>
-            <div class="card">
-                <h3>Solutions Techniques</h3>
-                <p>Développement de solutions techniques adaptées à vos besoins.</p>
+            <ul class="contact-list">
+                <li class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-info">
+                        <h4>Téléphone</h4>
+                        <p>+33 6 12 34 56 78</p>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>contact@monportfolio.com</p>
+                    </div>
+                </li>
+                <li class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div class="contact-info">
+                        <h4>Adresse</h4>
+                        <p>Paris, France</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" class="social-link">in</a>
+                <a href="https://github.com" target="_blank" class="social-link">gh</a>
+                <a href="https://twitter.com" target="_blank" class="social-link">𝕏</a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <main>
+        <section class="hero">
+            <h1 class="section-title animate-on-scroll">Bienvenue sur mon Portfolio</h1>
+            <p class="hero-text animate-on-scroll">Découvrez mes projets et compétences en développement web et bien plus encore.</p>
+            <button class="action-button animate-on-scroll">Explorer mon travail</button>
+        </section>
+
+        <section class="cards-section">
+            <div class="container">
+                <div class="cards-grid">
+                    <div class="card animate-on-scroll">
+                        <h3>Développement Web</h3>
+                        <div class="card-content">
+                            <p>Création de sites web modernes et responsives avec les dernières technologies.</p>
+                            <ul class="tech-stack">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <h3>Design UI/UX</h3>
+                        <div class="card-content">
+                            <p>Conception d'interfaces utilisateur intuitives et esthétiques.</p>
+                            <ul class="tech-stack">
+                                <li>Figma</li>
+                                <li>Adobe XD</li>
+                                <li>Prototypage</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <h3>Solutions Techniques</h3>
+                        <div class="card-content">
+                            <p>Développement de solutions techniques adaptées à vos besoins.</p>
+                            <ul class="tech-stack">
+                                <li>React</li>
+                                <li>Node.js</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="assets/js/index.js"></script>
 </body>

@@ -1,24 +1,21 @@
-// Configuration de l'Intersection Observer pour les animations au scroll
-const animateOnScroll = (entries) => {
-    // Active l'animation pour chaque élément visible
+// Configuration des animations au scroll
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            // Désinscrire l'élément après l'animation
+            observer.unobserve(entry.target);
         }
     });
-};
+}, observerOptions);
 
-// Création de l'observer avec un seuil de 10% de visibilité
-const observer = new IntersectionObserver(animateOnScroll, {
-    threshold: 0.1
-});
-
-// Observer pour les cartes
-document.querySelectorAll('.card').forEach(card => {
-    observer.observe(card);
-});
-
-// Observer pour les sections
+// Observer tous les éléments animés
 document.querySelectorAll('.animate-on-scroll').forEach(element => {
     observer.observe(element);
 });
@@ -32,53 +29,66 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Effet parallaxe sur le hero
+// Effet subtil au scroll sur le hero
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const hero = document.querySelector('.hero');
     if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+        hero.style.opacity = 1 - (scrolled * 0.002);
     }
 });
 
-// Animation du titre
-const animateText = (element) => {
-    const text = element.textContent;
-    element.textContent = '';
-    
-    for (let i = 0; i < text.length; i++) {
-        const span = document.createElement('span');
-        span.textContent = text[i];
-        span.style.animationDelay = `${i * 0.05}s`;
-        span.classList.add('animate-character');
-        element.appendChild(span);
-    }
-};
-
-// Animer les titres des cartes
-document.querySelectorAll('.card h3').forEach(title => {
-    title.addEventListener('mouseenter', () => {
-        animateText(title);
+// Fermer le menu mobile lors du clic sur un lien
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
     });
 });
 
-// Effet de hover sur les boutons
+// Animation des boutons
 document.querySelectorAll('.action-button').forEach(button => {
-    button.addEventListener('mouseenter', (e) => {
-        const rect = button.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        button.style.setProperty('--mouse-x', `${x}px`);
-        button.style.setProperty('--mouse-y', `${y}px`);
+    button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-2px)';
+    });
+    
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0)';
     });
 });
 
-// Changement de couleur du navbar au scroll
+// Changement de l'opacité de la navbar au scroll
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
     } else {
-        navbar.classList.remove('scrolled');
+        navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+    }
+});
+
+// Gestion du modal de contact
+const contactBtn = document.getElementById('contact-btn');
+const contactModal = document.getElementById('contact-modal');
+const closeModal = document.getElementById('close-modal');
+
+// Ouvrir le modal
+contactBtn.addEventListener('click', () => {
+    contactModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Empêcher le défilement
+});
+
+// Fermer le modal
+closeModal.addEventListener('click', () => {
+    contactModal.classList.remove('active');
+    document.body.style.overflow = ''; // Réactiver le défilement
+});
+
+// Fermer le modal en cliquant en dehors
+contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
     }
 });
