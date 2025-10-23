@@ -1,5 +1,6 @@
-// Animations au scroll avec Intersection Observer
+// Configuration de l'Intersection Observer pour les animations au scroll
 const animateOnScroll = (entries) => {
+    // Active l'animation pour chaque élément visible
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -7,6 +8,7 @@ const animateOnScroll = (entries) => {
     });
 };
 
+// Création de l'observer avec un seuil de 10% de visibilité
 const observer = new IntersectionObserver(animateOnScroll, {
     threshold: 0.1
 });
